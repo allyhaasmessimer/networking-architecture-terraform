@@ -33,3 +33,9 @@ module "route_tables" {
     vpc_id = module.vpc.vpc_id
     gateway_id = module.internet_gateway.internet_gateway_id
 }
+
+module "route_table_associations" {
+  source           = "./modules/route_table_associations"
+  public_subnet_ids = module.subnets.public_subnet_ids
+  route_table_id    = module.route_tables.route_table_id
+}
