@@ -1,0 +1,28 @@
+# Terraform state files
+*.tfstate
+*.tfstate.*
+*.tfplan
+
+# Terraform execution directory
+.terraform/
+
+# Sensitive files containing credentials or secrets
+*.pem
+*.key
+*.cer
+*.crt
+*.p12
+*.pfx
+*.env
+
+# Compiled binaries or artifacts
+/bin/
+/build/
+/dist/
+
+# Local development environment files
+.vscode/
+.idea/
+
+# Logs and output files
+*.log
