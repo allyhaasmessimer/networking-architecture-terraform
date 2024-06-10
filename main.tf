@@ -25,3 +25,11 @@ module "internet_gateway" {
     source = "./modules/internet_gateway"
     vpc_id = module.vpc.vpc_id
 }
+
+# Module for Route Tables
+# This module will manage the creation and configuration of the route tables.
+module "route_tables" {
+    source = "./modules/route_tables"
+    vpc_id = module.vpc.vpc_id
+    gateway_id = module.internet_gateway.internet_gateway_id
+}
