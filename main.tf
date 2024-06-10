@@ -11,3 +11,10 @@ provider "aws" {
 module "vpc" {
     source = "./modules/vpc"
 }
+
+# Module for public_subnets
+# This module will manage the creation and configuration of the Subnets.
+module "subnets" {
+    source = "./modules/subnets"
+    vpc_id = module.vpc.vpc_id
+}
