@@ -18,3 +18,10 @@ module "subnets" {
     source = "./modules/subnets"
     vpc_id = module.vpc.vpc_id
 }
+
+# Module for internet gateway
+# This module will manage the creation and configuration of the internet gateway.
+module "internet_gateway" {
+    source = "./modules/internet_gateway"
+    vpc_id = module.vpc.vpc_id
+}
