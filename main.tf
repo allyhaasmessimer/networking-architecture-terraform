@@ -34,8 +34,17 @@ module "route_tables" {
     gateway_id = module.internet_gateway.internet_gateway_id
 }
 
+# Module for Route Table Associations
+# This module will manage the creation and configuration of the route table associations
 module "route_table_associations" {
   source           = "./modules/route_table_associations"
   public_subnet_ids = module.subnets.public_subnet_ids
   route_table_id    = module.route_tables.route_table_id
+}
+
+# Module for Security Groups
+# This module will manage the creation and configuration of security groups.
+module "security_groups" {
+    source = "./modules/security_groups" # source points to the relative path of the security groups
+    vpc_id = module.vpc.vpc_id
 }
